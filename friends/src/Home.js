@@ -1,50 +1,36 @@
 import React from 'react';
 import { connect } from "react-redux";
+// import { withRouter } from 'react-router-dom';
 // import Loader from 'react-loader-spinner';
 
 // import { CharacterList } from "../components";
-import { getFriends } from './actions';
+// import { getFriends } from './actions';
 
 
 class Home extends React.Component {
-  // constructor() {
-  //   super();
-
-  // }
-
-  componentDidMount() {
-    // this.props.getTicker();
-  }
 
   render() {
-    if (this.props.isLoading) {
-      return (
-        // <Loader type="Triangle" color="#7f7878" height="90" width="90" />
-        <div>Loading...</div>
-      )
-    }
+    // if (this.props.isLoading) {
+    //   return (
+    //     // <Loader type="Triangle" color="#7f7878" height="90" width="90" />
+    //     <div>Loading...</div>
+    //   )
+    // }
     return (
-    //   <div>
-    //     {this.props.ticker.USD && <div className="price">{this.props.ticker.USD.symbol} {this.props.ticker.USD.last} </div>}
-    //   </div>
-    <div className="App">
-        Login to see your friends!
+    <div className="Home">
+        Welcome to our awesome site! If you want to see your friends, login and click "Friend List"
     </div>
     );
   }
 }
 
-// our mapStateToProps needs to have two properties inherited from state
-// the characters and the fetching boolean
 
 const mapStateToProps = state => ({
-  
-//   isLoading: state.blockchainReducer.isLoading,
-//   ticker: state.blockchainReducer.ticker,
-//   error: state.blockchainReducer.error
+    friends: state.friendReducer.friends
+    // fetchingFriends: 
 });
 
 export default connect(
-  mapStateToProps,
-  { getFriends }
+    mapStateToProps,
+    {  }
 )(Home);

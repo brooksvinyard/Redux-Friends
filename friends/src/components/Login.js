@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { login } from '../actions';
 
@@ -23,7 +24,7 @@ class Login extends React.Component {
   login = e => {
     e.preventDefault();
     this.props.login(this.state.credentials).then(() => {
-      this.props.history.push('/protected');
+      this.props.history.push('/friend-list');
     });
   };
 
@@ -50,7 +51,7 @@ class Login extends React.Component {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   null,
   { login }
-)(Login);
+)(Login));

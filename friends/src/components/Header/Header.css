@@ -23,11 +23,13 @@
 }
 .right {
     margin-right: 50px;
+    display: flex;
 }
 .right a{
     cursor: pointer;
     color: #fdfdfd;
     text-decoration: none;
+    padding-right: 10px;
 }
 
 .right a:hover {

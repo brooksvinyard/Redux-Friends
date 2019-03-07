@@ -3,18 +3,6 @@ import Friend from './Friend'
 import { connect } from "react-redux";
 import { getFriends } from '../../actions';
 
-// function friendList(props) {
-// //   if (props.friends.length === 0) {
-// //     return <h3>Loading friends...</h3>;
-// //   }
-//     return (
-//         <div className="friend-list">
-//           {/* {props.friends.map(e => (<Friend friends={e} key={e.name} setUpdateForm={props.setUpdateForm} /> ))} */}
-//       </div>
-//     )
-// };
-// export default FriendList;
-
 class FriendList extends React.Component {
     componentDidMount() {
         this.props.getFriends();
@@ -41,6 +29,7 @@ class FriendList extends React.Component {
 
 const mapStateToProps = state => ({
     friends: state.friendReducer.friends
+    // fetchingFriends: 
 });
 
 export default connect(
